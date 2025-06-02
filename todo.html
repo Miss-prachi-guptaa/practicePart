@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <h1>TODO LIST</h1>
+
+    <input type="text" id="Add_Todo">
+    <button id="btn">Click here</button>
+    <div class="add_list"></div>
+    <!-- <p class="add_list"></p> -->
+  </div>
+
+  <script>
+
+    let ItemInput = document.getElementById('Add_Todo');
+    let btn = document.getElementById('btn');
+    let addList = document.querySelector('.add_list');
+
+    const addTodo = () => {
+      console.log(ItemInput.value);
+
+      // addList.innerHTML = TodoList;
+      let pelm = document.createElement("p");
+      pelm.textContent = ItemInput.value;
+      console.log(pelm);
+      addList.append(pelm);
+      ItemInput.value = "";
+    }
+
+    btn.addEventListener("click", () => {
+      addTodo();
+    });
+
+    addList.addEventListener('click', (event) => {
+      console.log(event.target);
+      let currentElem = event.target;
+      currentElem.remove();
+    });
+
+
+  </script>
+</body>
+
+</html>
