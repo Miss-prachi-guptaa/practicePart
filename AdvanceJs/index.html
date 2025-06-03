@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    h1 {
+      margin-bottom: 1.0rem;
+      color: aliceblue;
+    }
+
+    body {
+      background-color: black;
+    }
+
+    button {
+      background-color: yellow;
+      color: black;
+      border-radius: 10%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Start inline elment -->
+  <h1>Inline Event</h1>
+  <button onclick="alert('WElcome prachi Gupta')">greeting</button>
+  <button>greeting again</button>
+
+  <!-- Dom event handler -->
+  <h1>Dom event handler</h1>
+  <button id="mybtn">greeting</button>
+  <button id="mybtn1">greeting again</button>
+
+  <!-- add eventlistner Handler -->
+  <h1>add eventlistner handler</h1>
+  <button id="mybtn2">greeting</button>
+  <button id="mybtn3">greeting again</button>
+
+  <script>
+    // dom evnt handler
+    document.getElementById('mybtn').onclick = () => {
+      alert(" i miss u Prachi");
+    }
+
+    document.getElementById('mybtn1').onmouseover = () => {
+      alert('Hello miss prachi');
+    }
+
+
+    // addEventListener 
+    document.getElementById('mybtn2').addEventListener('click', () => { // fat arrow function
+      alert('How are u Miss Prachi ')
+    })
+
+    document.getElementById('mybtn3').addEventListener('click', function () { //anonymous funtion
+      alert('Good morning Prachi');
+    })
+  </script>
+</body>
+
+</html>
