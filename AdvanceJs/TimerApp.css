@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2c2f4a;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #1e2030;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.counter {
+  font-size: 72px;
+  color: #ff4b80;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 30px;
+}
+
+.button-group {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px 20px;
+  /* 10px vertical, 20px horizontal */
+
+  margin-bottom: 10px;
+}
+
+
+button {
+  background-color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: transparent;
+  color: #fff;
+
+}
+
+/* button:active {
+  background-color: black;
+  color: aliceblue;
+} */
+
+/* button:active {
+  background-color: transparent;
+  color: white;
+  background-color: #1e2030;
+
+
+} */
+
+
+
+.resetValue {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 0, 128, 0.3);
+  max-height: 200px;
+  overflow-y: auto;
+  line-height: 1.6;
+}
