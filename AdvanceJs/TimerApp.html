@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timer App</title>
+  <link rel="stylesheet" href="TimerApp.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="counter" id="counter">0</div>
+    <div class="buttons">
+      <div class="button-group">
+        <button id="startBtn">Start</button>
+        <button id="stopBtn">Stop</button>
+        <button id="clearTimeBtn">clearTime</button>
+        <button id="resetBtn">Reset</button>
+        <button id="getTimeBtn">getTime</button>
+      </div>
+      <div class="resetValue"></div>
+    </div>
+  </div>
+
+  <script>
+    let resetValue = document.querySelector('.resetValue');
+    let counter = document.querySelector('.counter');
+    let startbtn = document.getElementById('startBtn');
+    let stopbtn = document.getElementById('stopBtn');
+    let clearTimeBtn = document.getElementById('clearTimeBtn');
+    let resetBtn = document.getElementById('resetBtn');
+    let getTimeBtn = document.getElementById('getTimeBtn');
+
+    let startCount = 0;
+    let IntervalId = null;
+    let time = 0;
+
+    // ?***** Start Button *******///
+
+    const startTimer = () => {
+      if (IntervalId !== null) return; // prevent multiple intervals
+
+      IntervalId = setInterval(() => {
+
+        time = counter.innerText = startCount++;
+      }, 1000);
+
+    }
+    startbtn.addEventListener('click', startTimer);
+
+    //*** ? Stop button*********//
+
+    const stopcount = () => {
+      clearInterval(IntervalId);
+      IntervalId = null; // reset to allow restarting
+    }
+    stopbtn.addEventListener('click', stopcount);
+
+    // ?******** RESET BUTTON *********?/////
+
+    const ResetButton = () => {
+      stopcount();
+      counter.innerText = 0;
+      startCount = 0;
+    }
+
+    resetBtn.addEventListener('click', ResetButton);
+
+    const GetTimeButton = () => {
+      let PElement = document.createElement('p');
+      PElement.innerHTML = `Curret time is ${time} .`;
+      resetValue.append(PElement);
+    }
+
+    getTimeBtn.addEventListener('click', GetTimeButton);
+
+    const clearTime = () => {
+      resetValue.innerHTML = "";
+    }
+    clearTimeBtn.addEventListener('click', clearTime);
+  </script>
+</body>
+
+</html>
